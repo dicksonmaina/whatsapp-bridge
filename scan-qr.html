@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan WhatsApp QR</title>
+<style>
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #25D366, #128C7E); min-height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; padding: 20px; }
+.card { background: white; border-radius: 16px; padding: 40px; text-align: center; max-width: 420px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+h1 { color: #075E54; margin-bottom: 10px; font-size: 1.8rem; }
+.subtitle { color: #666; margin-bottom: 30px; }
+.qr-container { background: white; border: 3px solid #075E54; border-radius: 12px; padding: 20px; margin: 20px auto; display: inline-block; }
+.qr-img { width: 260px; height: 260px; display: block; }
+.steps { text-align: left; background: #f0f9f4; padding: 20px; border-radius: 10px; margin-top: 25px; }
+.steps h3 { color: #075E54; margin-top: 0; }
+.steps ol { margin: 0; padding-left: 20px; }
+.steps li { margin-bottom: 10px; color: #333; line-height: 1.5; }
+.warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; margin-top: 20px; border-radius: 4px; text-align: left; font-size: 0.9rem; color: #856404; }
+.timer { font-size: 0.85rem; color: #888; margin-top: 15px; }
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Link WhatsApp Device</h1>
+<p class="subtitle">Scan this QR code with your phone</p>
+<div class="qr-container">
+<img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https%3A%2F%2Fwa.me%2Fsettings%2Flinked_devices%232%40USAaiyeQDDjaTTMcQozjmYCtzdSqxRI3qPFS0nRVKZ%2F1captua%2B978cJm7Vz4AJ%2BBWO2VhQxerIYnJtF2T6Dx%2Bc5wCYcotMngwg%3D%2ClgUAc5hHY5oET3UuHRktX5XgwVVnag99E%2F0MZ60x7iw%3D%2C9JosVWVxhtfrlM%2BNAo%2BuZnzjYoSnyCxnfp%2BbrhxXiQY%3D%2CpkAhFCs6NvoKKMDXzL0n9XbLbNFPPfccf4yfcRtX0zc%3D%2C1" alt="WhatsApp QR Code">
+</div>
+<div class="steps">
+<h3>How to scan:</h3>
+<ol>
+<li>Open <strong>WhatsApp on your phone</strong></li>
+<li>Go to <strong>Linked Devices</strong> (Settings → Linked Devices)</li>
+<li>Tap <strong>Link a Device</strong></li>
+<li>Point your camera at the QR code above</li>
+</ol>
+</div>
+<div class="warning">
+<strong>Important:</strong> Scan within 60 seconds. If it fails, refresh this page. Do NOT open this on WhatsApp Web.
+</div>
+<div class="timer" id="timer">QR generated at 2026-08-06 09:35:54</div>
+</div>
+</body>
+</html>

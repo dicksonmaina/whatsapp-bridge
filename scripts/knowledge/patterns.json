@@ -1,0 +1,19 @@
+{
+  "patterns": {
+    "error_handling": "Use try/catch with structured error objects",
+    "logging": "Use console.log with timestamps for now, migrate to winston later",
+    "process_management": "PM2 ecosystem file for production, batch files for dev",
+    "security": "Never log secrets, validate all inputs, rate limit endpoints",
+    "git": "Commit working states, never commit .env or databases",
+    "dependencies": "Pin versions in package.json, update monthly"
+  },
+  "improvements": [
+    { id: 'pm2-ecosystem', priority: 'high', effort: '2 hours', description: 'Replace batch files with PM2 ecosystem config' },
+    { id: 'health-endpoint', priority: 'high', effort: '1 hour', description: 'Add /health endpoint to bot.js' },
+    { id: 'input-validation', priority: 'medium', effort: '3 hours', description: 'Add validation for WhatsApp message payloads' },
+    { id: 'rate-limiting', priority: 'medium', effort: '2 hours', description: 'Add rate limiting to prevent abuse' },
+    { id: 'structured-logging', priority: 'medium', effort: '2 hours', description: 'Replace console.log with winston or pino' },
+    { id: 'docker-support', priority: 'low', effort: '4 hours', description: 'Add Dockerfile and docker-compose.yml' },
+    { id: 'test-suite', priority: 'medium', effort: '8 hours', description: 'Add unit tests for bot logic' }
+  ]
+}

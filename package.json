@@ -1,0 +1,23 @@
+{
+  "name": "whatsapp-bridge",
+  "version": "1.0.0",
+  "description": "WhatsApp AI Bridge with multi-service architecture",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node --watch bot.js",
+    "health": "node healthcheck.ps1",
+    "test": "node test_mem0.js",
+    "lint": "echo 'Add eslint or oxlint here'",
+    "agent": "node scripts/agent.cjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server-filesystem": "^2026.7.10",
+    "@whiskeysockets/baileys": "^7.0.0-rc13",
+    "axios": "^1.18.1",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

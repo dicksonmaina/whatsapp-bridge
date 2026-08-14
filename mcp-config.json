@@ -1,0 +1,13 @@
+{
+  "name": "hermes-filesystem",
+  "version": "1.0.0",
+  "description": "MCP filesystem server for Hermes agent",
+  "roots": [
+    "C:\\Users\\user\\whatsapp-bridge",
+    "C:\\Users\\user\\.openclaw",
+    "C:\\Users\\user\\.hermes",
+    "C:\\Users\\user\\Desktop\\javascript"
+  ],
+  "port": 5123,
+  "host": "127.0.0.1"
+}
