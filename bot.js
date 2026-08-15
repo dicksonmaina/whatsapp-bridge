@@ -224,6 +224,18 @@ const sendServer = http.createServer(async (req, res) => {
         req.on('end', async () => {
             try {
                 const { to, message } = JSON.parse(body);
+                const sendErrors = [];
+                if (!to || typeof to !== 'string' || to.trim() === '') {
+                    sendErrors.push({ field: 'to', message: 'to must be a non-empty string' });
+                }
+                if (!message || typeof message !== 'string' || message.trim() === '') {
+                    sendErrors.push({ field: 'message', message: 'message must be a non-empty string' });
+                }
+                if (sendErrors.length > 0) {
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'validation failed', details: sendErrors }));
+                    return;
+                }
                 if (!sock) {
                     res.writeHead(500, { 'Content-Type': 'application/json' });
                     res.end(JSON.stringify({ error: 'WhatsApp not connected' }));
@@ -243,6 +255,21 @@ const sendServer = http.createServer(async (req, res) => {
         req.on('end', async () => {
             try {
                 const { to, text, buttons, headerType } = JSON.parse(body);
+                const btnErrors = [];
+                if (!to || typeof to !== 'string' || to.trim() === '') {
+                    btnErrors.push({ field: 'to', message: 'to must be a non-empty string' });
+                }
+                if (text !== undefined && text !== null && typeof text === 'string' && text.length > 1000) {
+                    btnErrors.push({ field: 'text', message: 'text must be at most 1000 characters' });
+                }
+                if (!Array.isArray(buttons) || buttons.length < 1 || buttons.length > 3) {
+                    btnErrors.push({ field: 'buttons', message: 'buttons must be an array with 1-3 items' });
+                }
+                if (btnErrors.length > 0) {
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'validation failed', details: btnErrors }));
+                    return;
+                }
                 if (!sock) {
                     res.writeHead(500, { 'Content-Type': 'application/json' });
                     res.end(JSON.stringify({ error: 'WhatsApp not connected' }));
