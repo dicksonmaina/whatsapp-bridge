@@ -1,23 +1,24 @@
-.env
-.env.local
-.env.*.local
-*.db
-*.db-journal
-auth_info_baileys/
-auth_info_baileys.bak/
-logs/
-__pycache__/
-*.pyc
-*.pyo
-node_modules/
-/.stfolder/
-.agents/
-.claude/
+# OS
 .DS_Store
 Thumbs.db
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+.credentials
+*.key
+credentials.json
+.envrc
+
+# Node
+node_modules
+
+# Build/dist
+dist
+build
+.next
+output/
+
+# Logs
 *.log
-*.bak
-*.bak.*
-*.swp
-*.swo
-/vitest-tests/
