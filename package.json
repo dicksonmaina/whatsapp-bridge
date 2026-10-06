@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/server-filesystem": "^2026.7.10",
-    "@whiskeysockets/baileys": "^7.0.0-rc13",
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
     "axios": "^1.18.1",
     "qrcode-terminal": "^0.12.0"
   },
